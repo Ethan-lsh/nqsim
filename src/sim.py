@@ -262,17 +262,8 @@ def simulate_noise_model(calibration_file: str, num_qubits: int):
         basis_gates=fake_backend.configuration().basis_gates,
     )
 
-    result_noise = simulator.run(transpiled_circuit).result()
-
     # 7. Get the counts and plot the histogram
-    from qiskit.visualization import plot_histogram
-    import matplotlib.pyplot as plt
+    # get_qubit_counts(simulator, transpiled_circuit, num_qubits)
 
-    counts_noise = result_noise.get_counts(0)  # Get counts for the first circuit
-    plot_histogram(
-        counts_noise,
-        title=f"Counts for {num_qubits}-qubit GHZ state with device noise model",
-    )
-    plt.show()
-
-    return 0
+    # 8. Visualize the noise impact
+    visualize_noise_impact(simulator, transpiled_circuit, calibrated_noise_model, num_qubits)

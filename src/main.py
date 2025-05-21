@@ -42,9 +42,8 @@ if __name__ == "__main__":
    print("=========================")
 
    # Execute the simulation
-   print("Simulation options")
+   print("[ Simulation options ]")
    result = sim.simulate_noise_model(args.calibration_file, args.num_qubits)
-   print(f"Simulation result: {result}")
 
 #    save_simulation_results(result, args.output)
 
